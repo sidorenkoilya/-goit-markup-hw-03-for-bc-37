@@ -43,6 +43,10 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+   
+}
+.foot-list{
+    padding-bottom: 9px;
 }
 
 .visually-hidden {
@@ -111,6 +115,8 @@ body {
     display: flex;
     margin-left: auto;
 }
+/* .her{margin-top: 1.15em;}
+margin-bottom: px; */
 
 .site-contact .link {
     display: block;
@@ -141,12 +147,12 @@ body {
 .decision-title {
     margin-top: 0;
     margin-bottom: 30px;
-    color: var(--primary-white-color);
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    color: var(--accent-bg-color);
 }
 .decision-button {
     font-weight: 700;
@@ -158,12 +164,16 @@ body {
     border-radius: 4px;
     padding: 10px 32px;
     min-height: 50px;
-}
-.decision-button:hover,
-.decision-button:focus {
-    color: var(--primary-white-color);
     background-color: var(--accent-color);
+    color: var(--accent-bg-color);
 }
+.decision-button:focus,
+.decision-button:hover
+ {
+background-color: var(--accent-color);
+color: var(--primary-white-color);
+}
+/*  */
 /* Секциії */
 .section {
     padding-top: 94px;
