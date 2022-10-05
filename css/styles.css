@@ -10,6 +10,7 @@
     --border-color-portf: #eeeeee;
     --decision-bg-color: #c4c4c4;
     --border-color-header: #ececec;
+    --icon-link-color: #afb1b8;
 }
 
 body {
@@ -43,10 +44,6 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-   
-}
-.foot-list{
-    padding-bottom: 9px;
 }
 
 .visually-hidden {
@@ -64,6 +61,7 @@ body {
 }
 
 /* Шапка */
+
 .page-header {
     border-bottom: 1px solid var(--border-color-header);
 }
@@ -90,7 +88,6 @@ body {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
-
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
@@ -115,11 +112,9 @@ body {
     display: flex;
     margin-left: auto;
 }
-/* .her{margin-top: 1.15em;}
-margin-bottom: px; */
 
 .site-contact .link {
-    display: block;
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -127,6 +122,13 @@ margin-bottom: px; */
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+    align-items: center;
+    justify-content: center;
+}
+
+.site-contact .icon {
+    margin-right: 10px;
+    fill: currentColor;
 }
 
 .site-contact .item:not(:last-child) {
@@ -137,23 +139,41 @@ margin-bottom: px; */
 .site-contact .link:focus {
     color: var(--accent-color);
 }
+
 /* Рішення */
 .decision {
-    background-color: var(--primary-bg-color);
-    text-align: center;
+    max-width: 1600px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url(../images/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--decision-bg-color);
+    text-align: center;
 }
+
+.decision-text {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .decision-title {
     margin-top: 0;
     margin-bottom: 30px;
+    color: var(--primary-white-color);
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--accent-bg-color);
 }
+
 .decision-button {
     font-weight: 700;
     font-size: 16px;
@@ -161,24 +181,24 @@ margin-bottom: px; */
     letter-spacing: 0.06em;
     border-color: transparent;
     cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     padding: 10px 32px;
     min-height: 50px;
+}
+
+.decision-button:hover,
+.decision-button:focus {
+    color: var(--primary-white-color);
     background-color: var(--accent-color);
-    color: var(--accent-bg-color);
 }
-.decision-button:focus,
-.decision-button:hover
- {
-background-color: var(--accent-color);
-color: var(--primary-white-color);
-}
-/*  */
+
 /* Секциії */
 .section {
     padding-top: 94px;
     padding-bottom: 94px;
 }
+
 .section-title {
     margin-top: 0;
     margin-bottom: 50px;
@@ -187,52 +207,91 @@ color: var(--primary-white-color);
     line-height: 1.17;
     text-align: center;
 }
+
 /* Перваги */
 .benefits.list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
+
 .benefits.list .item {
     flex-basis: calc((100% - 90px) / 4);
 }
+
 .section.benefits {
     padding-bottom: 47px;
 }
+
+.thumb {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: var(--accent-bg-color);
+}
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+}
+
+.benefits .item::before {
+  display: block;
+  content: '';
+  height: 120px;
+  background-color: var(--accent-bg-color);
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .benefits-title {
     margin-top: 0;
     margin-bottom: 10px;
+    padding-top: 20px;
     color: var(--title-text-color);
     font-size: 14px;
     line-height: 1.14;
     text-transform: uppercase;
 }
+
 .benefits-text {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 14px;
     line-height: 1.71;
 }
+
 /* Варіанти послуг */
 .section.services {
     padding-top: 47px;
 }
+
 .services.list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
+
 .services.list .item {
     flex-basis: calc((100% - 60px) / 3);
 }
+
 .services.list .img {
     display: block;
     width: 100%;
 }
+
 /* Команда */
 .section.team {
     background-color: var(--accent-bg-color);
 }
+
 .team-title {
     margin-top: 0;
     margin-bottom: 10px;
@@ -241,74 +300,218 @@ color: var(--primary-white-color);
     font-size: 16px;
     line-height: 1.19;
 }
+
 .team-text {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.19;
 }
+
 .team.list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     text-align: center;
 }
+
 .team.list .item {
     flex-basis: calc((100% - 90px) / 4);
+    max-height: 428px;
     background-color: var(--primary-white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
+
 .team.list .img {
     width: 100%;
+    display: block;
 }
+
 .team .content {
     padding-top: 30px;
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
 }
+
+.soc.list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soc.list .soc-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.soc.list .icon-link {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.soc.list .icon-link {
+    color: var(--icon-link-color);
+}
+
+.soc.list .icon-link:hover,
+.soc.list .icon-link:focus {
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+}
+
+.icon-link .icon {
+    fill: currentColor;
+}
+
+/* .socnetwork .list {
+  display: flex;
+  margin-bottom: 30px;
+}
+.socnetwork .item:not(:last-child) {
+  margin-right: 10px;
+}
+.socnetwork .link {
+  display: flex;
+  height: 44px;
+  width: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+} */
+
+/* Наші клієнти */
+.clients.list {
+    display: flex;
+}
+
+.clients.list .item:not(:last-child) {
+    margin-right: 30px;
+}
+
+.clients.list .link {
+    display: flex;
+    height: 92px;
+    width: 170px;
+    border: 1px solid var(--icon-link-color);
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    color: var(--icon-link-color);
+}
+
+.clients.list .link:hover,
+.clients.list .link:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.clients.list .icon {
+    fill: currentColor;
+}
+
 /* Футер */
 .page-footer {
     background-color: var(--primary-bg-color);
     padding-top: 60px;
     padding-bottom: 60px;
 }
+
 .page-footer .logo-style {
     color: var(--primary-white-color);
 }
+
 .footer-adress .link {
     font-style: normal;
-    /* font-weight: 400; */
     font-size: 14px;
     line-height: 1.71;
     color: var(--primary-white-color);
 }
+
 .contact.link {
     color: var(--accent-second-color);
 }
+
 .footer-adress .link:hover,
 .footer-adress .link:focus {
     color: var(--accent-color);
 }
+
+.container.footer {
+    display: flex;
+}
+
 .logo.footer {
     display: inline-block;
     margin-bottom: 20px;
 }
+
+.socnetwork {
+    margin-left: 70px;
+    padding-top: 12px;
+    color: var(--primary-white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.socnetwork h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.socnetwork .list {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.socnetwork .item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.socnetwork .link {
+    display: flex;
+    height: 44px;
+    width: 44px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.socnetwork .link:hover,
+.socnetwork .link:focus {
+    background-color: var(--accent-color);
+}
+
 /* Портфолио */
+
+/* Наші роботи */
 .page-portfolio {
     padding-top: 94px;
     padding-bottom: 94px;
 }
+
 .porfolio h1 {
     margin-top: 0;
     margin-bottom: 0;
     text-align: center;
 }
+
 .button.list {
     display: flex;
     margin-bottom: 50px;
     justify-content: center;
 }
+
 .page-button {
     font-weight: 500;
     font-size: 16px;
@@ -321,17 +524,19 @@ color: var(--primary-white-color);
     padding: 6px 22px;
     min-height: 38px;
 }
+
 .button.list .item:not(:last-child) {
     margin-right: 8px;
 }
-.item{
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.39);
-}
+
 .page-button:hover,
 .page-button:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+        0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
 .example-title {
     margin-top: 0;
     margin-bottom: 4px;
@@ -340,6 +545,7 @@ color: var(--primary-white-color);
     line-height: 2;
     letter-spacing: 0.06em;
 }
+
 .example-text {
     margin-top: 0;
     margin-bottom: 0;
@@ -347,22 +553,36 @@ color: var(--primary-white-color);
     font-size: 16px;
     line-height: 1.88;
 }
+
 .example.list {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
 }
+
 .example.list .item {
     flex-basis: calc((100% - 60px) / 3);
 }
+
 .example.item .img {
     display: block;
     width: 100%;
 }
+
+.example .link {
+    display: block;
+}
+
+.example .link:hover,
+.example .link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+
+}
+
 .border {
     padding: 20px 24px;
     border-bottom: 1px solid var(--border-color-portf);
     border-right: 1px solid var(--border-color-portf);
     border-left: 1px solid var(--border-color-portf);
-    width: 100%;
 }
